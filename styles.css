@@ -20,7 +20,7 @@ body {
 
 .topnav a:hover {
   background-color: #dda63a;
-  color: black;
+  color: #333;
 }
 
 .topnav a.active {
@@ -60,6 +60,15 @@ h2 {
   font-size: 35px;
   text-align: left;
   border-bottom: 2px solid #dda63a;
+}
+
+.footer
+{
+  padding: 25px;
+  background-color: #1f1e1e;
+  color: #dda63a;
+  text-align: center;
+  font-size: 20px;
 }
 
 .about-container {
@@ -206,5 +215,3 @@ h2 {
   font-size: 28px;
 }
 }
-
-
