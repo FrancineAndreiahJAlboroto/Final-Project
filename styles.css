@@ -4,6 +4,10 @@ body {
   background-color: #EDE8D0;
 }
 
+p {
+  font-size: 22px;
+}
+
 .topnav {
   overflow: hidden;
   background-color: #333;
@@ -148,7 +152,7 @@ h2 {
 }
 
 .intro {
-  font-size: 1.2em;
+  font-size: 22px;
   color: #2c3a43;
   margin: 10px 0;
   flex: 1;
@@ -180,6 +184,14 @@ h2 {
   max-width: 300px;
   margin: 0;
   border-radius: 10px;
+  animation: 5s linear infinite;
+  transform-origin: center;
+  transform: rotate(0);
+  transition: transform 5s linear;
+}
+
+.SDG-img:hover {
+  transform: rotate(360deg);
 }
 
 .class {
@@ -197,6 +209,7 @@ h2 {
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
+  font-size: 15px;
 }
 
 .education-list {
@@ -235,4 +248,49 @@ img.youtube{
 	width: 50px;
 	height: 50px;
 }
+
+a:link {
+  color: #dda63a;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #dda63a;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: green;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.References {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+img[alt~="SDG"] {
+  border: 2px solid #dda63a;
+}
+
+.content {
+  background-size: 200px 200px;
+  background-color: #faf8f1;
+}
+
+.help-list li:nth-child(3n) {
+  color: #dda63a;
+}
+
+img[src$=".png"] {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
 }
