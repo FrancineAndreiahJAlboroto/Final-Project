@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SDG 2 Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>SDG 2: Zero Hunger Quiz</h2>
+        <div id="quiz">
+            <p id="question" class="question"></p>
+            <div id="options" class="options"></div>
+            <button id="next-btn">Next</button>
+        </div>
+    </div>
+    <script>
+        const quizData = [
+            {
+                question: "What does SDG 2 aim to achieve?",
+                options: ["Zero Hunger", "Quality Education", "Gender Equality", "Clean Water"],
+                answer: 0
+            },
+            {
+                question: "Which of these is a key factor in achieving zero hunger?",
+                options: ["Deforestation", "Sustainable agriculture", "More fast food chains", "Increased urbanization"],
+                answer: 1
+            },
+            {
+                question: "Which continent has the highest rates of undernourishment?",
+                options: ["North America", "Europe", "Africa", "Australia"],
+                answer: 2
+            }
+        ];
+        
+        let currentQuestionIndex = 0;
+        let score = 0;
+        
+        function loadQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            document.getElementById("question").textContent = currentQuestion.question;
+            document.getElementById("options").innerHTML = "";
+            
+            currentQuestion.options.forEach((option, index) => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.onclick = () => checkAnswer(index);
+                document.getElementById("options").appendChild(button);
+            });
+        }
+        
+        function checkAnswer(selectedIndex) {
+            const correctAnswer = quizData[currentQuestionIndex].answer;
+            if (selectedIndex === correctAnswer) {
+                score++;
+                alert("Correct!");
+            } else {
+                alert("Wrong answer!");
+            }
+            document.getElementById("next-btn").style.display = "block";
+        }
+        
+        document.getElementById("next-btn").addEventListener("click", () => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+                loadQuestion();
+                document.getElementById("next-btn").style.display = "none";
+            } else {
+                document.getElementById("question").textContent = `Quiz complete! Your score: ${score}/${quizData.length}`;
+                document.getElementById("options").innerHTML = "";
+                document.getElementById("next-btn").style.display = "none";
+            }
+        });
+        
+        loadQuestion();
+    </script>
+</body>
+</html>
